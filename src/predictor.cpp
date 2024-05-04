@@ -28,7 +28,7 @@ namespace pred {
     return Value(lhs) -= rhs;
   }
 
-  std::valarray<double> Value::props()
+  std::valarray<double> Value::props() const
   {
     std::valarray<double> ret(0., K);
 
@@ -40,7 +40,7 @@ namespace pred {
     return ret;
   }
 
-  std::valarray<int> Value::props100()
+  std::valarray<int> Value::props100() const
   {
     std::valarray<int> ret(0, K);
 
@@ -418,7 +418,7 @@ namespace pred {
     return ret;
   }
 
-  std::vector<Value> Predictor::operator()(const std::vector<int>& wall, const std::vector<int>& river, const int m)
+  std::vector<Value> Predictor::operator()(const std::vector<int>& wall, const std::vector<int>& river, const int m) const
   {
 #ifdef CHECK_WALL
     if (wall.size() != K) {

@@ -16,8 +16,8 @@ namespace pred {
         : states(INT64_C(0), K) {}
     Value& operator+=(const Value& rhs);
     Value& operator-=(const Value& rhs);
-    std::valarray<double> props();
-    std::valarray<int> props100();
+    std::valarray<double> props() const;
+    std::valarray<int> props100() const;
   };
 
   const Value operator+(const Value& lhs, const Value& rhs);
@@ -153,7 +153,7 @@ namespace pred {
     Value calc_sp(const std::vector<int>& wall, const std::vector<int>& river) const;
     Value calc_lh_sp(const std::vector<int>& wall, const std::vector<int>& river) const;
     Value calc_to(const std::vector<int>& wall, const std::vector<int>& river) const;
-    std::vector<Value> operator()(const std::vector<int>& wall, const std::vector<int>& river, int m);
+    std::vector<Value> operator()(const std::vector<int>& wall, const std::vector<int>& river, int m) const;
   };
 }
 
