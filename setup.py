@@ -11,7 +11,6 @@ ext_modules = [
         cxx_std=17,
         define_macros=[("VERSION_INFO", __version__)],
         extra_compile_args=["-O3"],
-        include_dirs=["predictor/src"],
     ),
 ]
 
